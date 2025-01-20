@@ -21,11 +21,13 @@ S využitím Multiprocessingu (8 procesů) a techniky Branch and Bound běžel p
 
 Použité knihovny: Pandas, Numpy, Numba, Scipy, Time.
 
-Při testování na datasetu MNIST shluky nevznikaly správně. Kód přeložený pomocí Numba a paralelizovaný pomocí prange() 
-běžel v řádech minut. Kód ve standardním, neparalelizovaném Pythonu běžel PODSTATNĚ déle -- na finální čas lineárního
-kódu jsem proto ani nečekal.
+Při testování na redukovaném datasetu MNIST se ukázala paralelizace pomocí Numby jako podstatně rychlejší -- algoritmus běžel
+6 sekund. Lineární kód pak běžel 50 sekund. Shlukování však neproběhlo podle skutečných tříd, a proto jsem správnost rozhodl
+ještě na základě dat z přiloženého paperu.
 
-To, zdali algoritmus správně pracuje a tvoří clustery, jsem ověřil na datasetu z přiloženého paperu ( Thavikulwat, Precha. “Affinity Propagation: A Clustering Algorithm for Computer-Assisted Business Simulations and Experiential Exercises.” Developments in Business Simulation and Experiential Learning 35 (2014): n. pag.)
+````
+ Thavikulwat, Precha. “Affinity Propagation: A Clustering Algorithm for Computer-Assisted Business Simulations and Experiential Exercises.” Developments in Business Simulation and Experiential Learning 35 (2014): n. pag. 
+````
 
-Výsledkem byly dva správně určené shluky. Jelikož se však jednalo o velmi malý dataset, rozdíl v rychlostí běhu lineárního
-a paralelního řešení byl nepatrný.
+Na základě těchto dat jsem ověřil, že algoritmus funguje správně. Paralelizace zde však zde kvůli režijním nákladům 
+nebyla tak efektivní.
