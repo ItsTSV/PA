@@ -41,3 +41,10 @@ Clusters:
  {0: [0, 1, 2], 3: [3, 4]}
 ````
 Paralelizace však zde kvůli režijním nákladům a velmi malému rozsahu dat nebyla tak efektivní.
+
+
+## 3. PageRank Algorithm
+
+Jelikož měl vstupní soubor +- 8M řádků a jeho samotné paralelní načtení zabralo 6 minut, byl jsem nucen použít C++ :(
+
+Program se nachází ve druhé složce, popřípadě v tomto repozitáři: https://github.com/ItsTSV/PageRank
